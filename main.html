@@ -25,7 +25,16 @@
             </div>
             <ul class="nav-menu">
                 <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
-                <li><a href="#servicios" class="nav-link">Servicios</a></li>
+                <li class="nav-dropdown">
+                    <a href="#servicios" class="nav-link">Servicios</a>
+                   <ul class="dropdown-menu">
+                        <li><a href="#administracion" class="dropdown-link">Administración</a></li>
+                        <li><a href="#marketing-digital" class="dropdown-link">Marketing Digital</a></li>
+                        <li><a href="#creacion-produccion" class="dropdown-link">Creación de Contenido</a></li>
+                        <li><a href="#recursos-humanos" class="dropdown-link">Recursos Humanos</a></li>
+                        <li><a href="#programacion" class="dropdown-link">Programación</a></li>
+                    </ul> 
+                </li>
                 <li><a href="#Equipo" class="nav-link">Equipo</a></li>
                 <li><a href="#clientes" class="nav-link">Clientes</a></li>
                 <li><a href="#contactanos" class="nav-link">Contáctanos</a></li>
@@ -98,54 +107,151 @@
         <section id="servicios" class="section">
             <svg class="servicios-decoration" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice"> 
                 <circle cx="1175" cy="80" r="280" fill="none" stroke="rgba(247, 197, 15, 0.12)" stroke-width="5"></circle>
-                <circle cx="1175" cy="80" r="240" fill="none" stroke="rgba(172, 186, 17, 0.15)" stroke-width="5"></circle> 
-                <line x1="110" y1="0" x2="600" y2="1000" stroke="rgba(247, 197, 15, 0.1)" stroke-width="3"></line>
-                <line x1="110" y1="0" x2="200" y2="1200" stroke="rgba(247, 197, 15, 0.1)" stroke-width="20"></line>
+                <circle cx="1175" cy="80" r="240" fill="none" stroke="rgba(172, 186, 17, 0.15)" stroke-width="5"></circle>  
+                <line x1="-50" y1="400" x2="250" y2="700" stroke="rgba(172, 186, 17, 0.18)" stroke-width="12"></line>
+                <line x1=" 20" y1="500" x2="150" y2="800" stroke="rgba(247, 197, 15, 0.15)" stroke-width="8"></line>
             </svg>
             <div class="container">
                 <h2>Nuestros Servicios</h2>
                 <div class="services-grid">
-                    <div class="service-card">
+                    <a href="#administracion" class="service-card">
                         <h3>Administración</h3>
                         <div class="card-stats">
                             <div class="stat-item">✓ 98% Precisión Reportes</div>
                             <div class="stat-item">✓ +50% Eficiencia Operativa</div>
                             <div class="stat-item">✓ 360° Visión Financiera</div>
                         </div>
-                    </div>
-                    <div class="service-card">
+                    </a>
+                    <a href="#marketing-digital" class="service-card">
                         <h3>Marketing Digital</h3>
                         <div class="card-stats">
                             <div class="stat-item">✓ 3X Promedio en ADS</div>
                             <div class="stat-item">✓ +500K Alcance generado</div>
                             <div class="stat-item">✓ 360° Estrategia Integral</div>
                         </div>
-                    </div>
-                    <div class="service-card">
+                    </a>
+                    <a href="#creacion-produccion" class="service-card">
                         <h3>Creación y Producción de Contenido</h3>
                         <div class="card-stats">
                             <div class="stat-item">✓ 4K Calidad de Imagen</div>
                             <div class="stat-item">✓ 48H Entrega Express</div>
                             <div class="stat-item">✓ ♾️ Creatividad sin Límites</div> 
                         </div>
-                    </div>
-                    <div class="service-card">
+                    </a>
+                    <a href="#recursos-humanos" class="service-card">
                         <h3>Recursos Humanos</h3>
                         <div class="card-stats">
                             <div class="stat-item">✓ 95% Retención de Talento</div>
                             <div class="stat-item">✓ -60% Rotacion no Deseada</div>
                             <div class="stat-item">✓ 360° Gestión Integral</div>
                         </div>
-                    </div>
-                    <div class="service-card">
+                    </a>
+                    <a href="#programacion" class="service-card">
                         <h3>Programación</h3>
                         <div class="card-stats">
                             <div class="stat-item">✓ 40% Eficiencia Operativa</div>
                             <div class="stat-item">✓ 99% Óptima Garantía</div>
                             <div class="stat-item">✓ ISO Estándares Técnicos</div>
                         </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCION ADMINISTRACION -->
+        <section id="administracion" class="section admin-section">
+            <svg class="admin-decoration" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice">
+                <!-- Líneas circulares decorativas izquierda -->
+                <circle cx="-50" cy="100" r="200" fill="none" stroke="rgba(255, 255, 255, 0.15)" stroke-width="40"></circle>
+                <circle cx="-50" cy="100" r="120" fill="none" stroke="rgba(255, 255, 255, 0.1)" stroke-width="30"></circle>
+                <circle cx="-50" cy="100" r="50" fill="none" stroke="rgba(255, 255, 255, 0.15)" stroke-width="20"></circle>
+                
+                <!-- Líneas circulares decorativas derecha -->
+                <circle cx="1250" cy="500" r="280" fill="none" stroke="rgba(255, 255, 255, 0.12)" stroke-width="50"></circle>
+                <circle cx="1250" cy="500" r="160" fill="none" stroke="rgba(255, 255, 255, 0.1)" stroke-width="35"></circle>
+            </svg>
+            <div class="container admin-container">
+                <h2>Administración</h2> 
+                <div class="admin-content admin-content-wrapper">
+                    <div class="admin-image">
+                        <img src="assets/admin.jpeg" alt="Administración">
+                    </div>
+                    
+                    <div class="admin-services">
+                        <svg class="admin-lines" viewBox="0 0 600 800" preserveAspectRatio="none">
+                            <!-- Línea conectando 01 a 02 -->
+                            <path d="M 100 150 Q 250 150, 400 150 Q 450 150, 450 250" stroke="#F7C50F" stroke-width="3" fill="none"></path>
+                            <circle cx="450" cy="130" r="8" fill="#F7C50F"></circle>
+                            
+                            <!-- Línea conectando 02 a 04 -->
+                            <path d="M 450 350 Q 450 450, 450 550" stroke="#F7C50F" stroke-width="3" fill="none"></path>
+                            <circle cx="450" cy="550" r="8" fill="#F7C50F"></circle>
+                            
+                            <!-- Línea conectando 04 a 03 -->
+                            <path d="M 450 650 Q 250 650, 100 650" stroke="#F7C50F" stroke-width="3" fill="none"></path>
+                            <circle cx="100" cy="650" r="8" fill="#F7C50F"></circle>
+                        </svg>
+
+                        <div class="admin-item admin-item-01">
+                            <div class="admin-number">01</div> 
+                            <h3>Gestión financiera y presupuestos</h3>
+                            <p>Planificación, análisis de flujo de actividades y estrategias de optimización de recursos.</p>
+                        </div>
+
+                        <div class="admin-item admin-item-02">
+                            <div class="admin-number">02</div> 
+                            <h3>Control de ingresos y egresos</h3>
+                            <p>Seguimiento detallado y categorización de movimientos financieros para mantener la salud económica de su empresa.</p>
+                        </div>
+
+                        <div class="admin-item admin-item-03">
+                            <div class="admin-number">03</div> 
+                            <h3>Optimización de procesos administrativos</h3>
+                            <p>Diagnóstico, rediseño e implementación de flujos de trabajo eficientes que reducen costos y elevan la productividad.</p>
+                        </div>
+
+                        <div class="admin-item admin-item-04">
+                            <div class="admin-number">04</div> 
+                            <h3>Elaboración de reportes gerenciales</h3>
+                            <p>Informes ejecutivos claros, precisos y visuales que facilitan la toma de ediciones estratégicas en tiempo real.</p>
+                        </div>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- SECCION MARKETING DIGITAL -->
+        <section id="marketing-digital" class="section">
+            <div class="container">
+                <h2>Marketing Digital</h2>
+                <p>Estrategias de marketing digital para aumentar tu presencia en línea.</p>
+            </div>
+
+        </section>
+
+        <!-- SECCION CREACION Y PRODUCCION DE CONTENIDO -->
+        <section id="creacion-produccion" class="section">
+            <div class="container">
+                <h2>Creación y Producción de Contenido</h2>
+                <p>Contenido creativo y de alta calidad para destacar tu marca.</p>
+            </div>
+
+        </section>
+
+
+        <!-- SECCION RECURSOS HUMANOS -->
+        <section id="recursos-humanos" class="section">
+            <div class="container">
+                <h2>Recursos Humanos</h2>
+                <p>Gestión integral de recursos humanos para potenciar tu equipo.</p>
+            </div>
+        </section>
+
+            <!-- SECCION PROGRAMACION -->
+        <section id="programacion" class="section">
+            <div class="container">
+                <h2>Programación</h2>
+                <p>Desarrollo de software a medida para optimizar tus procesos.</p>
             </div>
         </section>
 
