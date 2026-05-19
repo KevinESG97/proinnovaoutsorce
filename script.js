@@ -74,3 +74,45 @@ document.querySelectorAll('.service-card, .client-card').forEach(element => {
     element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
     observer.observe(element);
 });
+
+// Manejo de modales del equipo
+const teamCards = document.querySelectorAll('.team-card');
+const modals = document.querySelectorAll('.modal');
+const closeButtons = document.querySelectorAll('.close');
+
+teamCards.forEach(card => {
+    card.addEventListener('click', function() {
+        const teamId = this.getAttribute('data-team');
+        const modal = document.getElementById(`${teamId}-modal`);
+        if (modal) {
+            modal.classList.add('active');
+        }
+    });
+});
+
+closeButtons.forEach(button => {
+    button.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const modal = this.closest('.modal');
+        if (modal) {
+            modal.classList.remove('active');
+        }
+    });
+});
+
+modals.forEach(modal => {
+    modal.addEventListener('click', function(e) {
+        if (e.target === this) {
+            this.classList.remove('active');
+        }
+    });
+});
+
+// Cerrar modal con tecla ESC
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        modals.forEach(modal => {
+            modal.classList.remove('active');
+        });
+    }
+});
