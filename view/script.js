@@ -1,6 +1,10 @@
 // Scroll suave para los enlaces del navbar
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
+        if (this.classList.contains('services-toggle') && window.innerWidth <= 900) {
+            return;
+        }
+
         e.preventDefault();
         const targetId = this.getAttribute('href');
         const targetElement = document.querySelector(targetId);
@@ -12,6 +16,62 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             });
         }
     });
+});
+
+// Menú móvil
+const navToggle = document.querySelector('.nav-toggle');
+const navMenu = document.querySelector('.nav-menu');
+const servicesToggle = document.querySelector('.services-toggle');
+const navDropdown = document.querySelector('.nav-dropdown');
+
+function closeMobileMenu() {
+    navMenu.classList.remove('active');
+    navToggle.classList.remove('active');
+    navToggle.setAttribute('aria-expanded', 'false');
+    navToggle.setAttribute('aria-label', 'Abrir menú');
+    navDropdown.classList.remove('submenu-open');
+    servicesToggle.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('menu-open');
+}
+
+navToggle.addEventListener('click', function() {
+    const isOpen = navMenu.classList.toggle('active');
+
+    if (!isOpen) {
+        closeMobileMenu();
+        return;
+    }
+
+    navToggle.classList.toggle('active', isOpen);
+    navToggle.setAttribute('aria-expanded', String(isOpen));
+    navToggle.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
+    document.body.classList.toggle('menu-open', isOpen);
+});
+
+servicesToggle.addEventListener('click', function(e) {
+    if (window.innerWidth > 900) {
+        return;
+    }
+
+    e.preventDefault();
+    const isOpen = navDropdown.classList.toggle('submenu-open');
+    servicesToggle.setAttribute('aria-expanded', String(isOpen));
+});
+
+navMenu.querySelectorAll('a:not(.services-toggle)').forEach(link => {
+    link.addEventListener('click', closeMobileMenu);
+});
+
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeMobileMenu();
+    }
+});
+
+window.addEventListener('resize', function() {
+    if (window.innerWidth > 900) {
+        closeMobileMenu();
+    }
 });
 
 // Efecto de cambio de color en navbar al hacer scroll
@@ -109,7 +169,7 @@ clientCards.forEach(card => {
 // Seleccionar otras imágenes expandibles (no client-card)
 // (excluyendo logos del navbar, icono de contacto, y otras imágenes que no queremos expandir)
 const expandableImages = document.querySelectorAll(
-    'img:not(.contact-icon):not(.logo-img):not(.modal-image):not(.client-card img)'
+    'img:not(.contact-icon):not(.logo-img):not(.modal-image):not(.client-card img):not(.tool-logo):not(.tool-name)'
 );
 
 // Abrir modal al hacer clic en una imagen (no client-card)
