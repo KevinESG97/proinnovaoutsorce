@@ -1366,14 +1366,14 @@ body {
 
 .tools-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(6, minmax(0, 1fr));
     gap: 35px;
     align-items: stretch;
     margin-top: 50px;
 }
 
 .tool-card {
-    min-height: 300px;
+    min-height: 150px;
     padding: 35px 30px;
     display: flex;
     flex-direction: column;
@@ -1381,18 +1381,29 @@ body {
     align-items: center;
     gap: 28px;
     background: var(--color-blanco);
-    border-top: 6px solid #C65D2E;
+    border-top: 6px solid #0B3D5C;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    grid-column: span 2;
 }
 
-.tool-card:nth-child(2) {
+.tool-card-gemini {
+    border-top-color: #EBC315;
+}
+
+.tool-card-claude {
+    border-top-color: #C65D2E;
+}
+
+.tool-card-codex {
     border-top-color: rgb(40, 131, 206);
+    grid-column: 2 / span 2;
 }
 
-.tool-card:nth-child(3) {
+.tool-card-copilot {
     border-top-color: #7B2CBF;
+    grid-column: 4 / span 2;
 }
 
 .tool-card:hover {
@@ -1400,28 +1411,36 @@ body {
     box-shadow: 0 12px 24px rgba(28, 56, 15, 0.2);
 }
 
-.tool-card:nth-child(1):hover {
+.tool-card-chatgpt:hover {
+    box-shadow: 0 12px 24px rgba(11, 61, 92, 0.28);
+}
+
+.tool-card-gemini:hover {
+    box-shadow: 0 12px 24px rgba(235, 195, 21, 0.28);
+}
+
+.tool-card-claude:hover {
     box-shadow: 0 12px 24px rgba(198, 93, 46, 0.25);
 }
 
-.tool-card:nth-child(2):hover {
+.tool-card-codex:hover {
     box-shadow: 0 12px 24px rgba(40, 131, 206, 0.25);
 }
 
-.tool-card:nth-child(3):hover {
+.tool-card-copilot:hover {
     box-shadow: 0 12px 24px rgba(123, 44, 191, 0.25);
 }
 
 .tool-logo {
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     object-fit: contain;
 }
 
 .tool-name {
     width: 100%;
-    max-width: 220px;
-    height: 55px;
+    max-width: 250px;
+    height: 35px;
     object-fit: contain;
 }
 
@@ -2057,6 +2076,10 @@ body {
     .tools-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 22px;
+    }
+
+    .tool-card {
+        grid-column: auto;
     }
 
     .tool-card {
