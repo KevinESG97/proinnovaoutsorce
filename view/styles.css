@@ -456,6 +456,7 @@ body {
 /* CLIENTES SECTION */
 #clientes {
     position: relative;
+    background-color: #fbfdfa;
 }
 
 .clients-decoration {
